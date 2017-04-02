@@ -1,0 +1,34 @@
+{"checks": [
+    {
+        "id": "W32Time",
+        "name": "w32time", 
+        "script": "PowerShell -ExecutionPolicy Bypass -NoProfile -File C:\\ProgramData\\consul\\config\\ServiceCheck.ps1", 
+        "interval": "30s"
+    },
+    {
+        "id": "CPU",
+        "name": "Average CPU", 
+        "script": "PowerShell -ExecutionPolicy Bypass -NoProfile -File C:\\ProgramData\\consul\\config\\CpuCheck.ps1", 
+        "interval": "30s"
+    },
+    {
+        "id": "Memory",
+        "name": "Memory Usage Percentage", 
+        "script": "PowerShell -ExecutionPolicy Bypass -NoProfile -File C:\\ProgramData\\consul\\config\\MemCheck.ps1", 
+        "interval": "30s"
+    },
+    {
+        "id": "Disk",
+        "name": "Disk Usage Percentage", 
+        "script": "PowerShell -ExecutionPolicy Bypass -NoProfile -File C:\\ProgramData\\consul\\config\\VolCheck.ps1", 
+        "interval": "30s"
+    },
+	{
+		"id": "localhost",
+		"name": "HTTP API on port 80",
+		"http": "http://localhost/",
+		"interval": "10s",
+		"timeout": "1s"
+	}
+  ]
+}
